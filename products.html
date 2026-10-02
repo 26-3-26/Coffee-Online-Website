@@ -1,0 +1,43 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9RQC3G3N2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9RQC3G3N2R');
+</script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+    <div class="nav-right">
+        <a href="/">الرئيسية</a>
+        <a href="/products">المحاصيل</a>
+        <a href="/about">عن المتجر</a>
+    </div>
+    <div class="nav-left">
+        <a href="/" class="logout-link">تسجيل خروج</a>
+    </div>
+</nav>
+<div class="container">
+    <h2 style="text-align: center; margin-bottom: 30px;">محاصيلنا المختصة</h2>
+    
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="/static/images/ethiopia.jpg" alt="قهوة إثيوبية">
+            <h3>إثيوبي - يورغاشيف</h3>
+            <a href="/product/ethiopian" class="btn">عرض التفاصيل</a>
+        </div>
+
+        <div class="product-card">
+            <img src="/static/images/colombia.jpg" alt="قهوة كولومبية">
+            <h3>كولومبي - هويلا</h3>
+            <a href="/product/colombian" class="btn">عرض التفاصيل</a>
+        </div>
+
+        <div class="product-card">
+            <img src="/static/images/yemen.jpg" alt="قهوة يمنية">
+            <h3>يمني - حرازي</h3>
+            <a href="/product/yemeni" class="btn">عرض التفاصيل</a>
+        </div>
+    </div>
+</div>

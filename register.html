@@ -1,0 +1,21 @@
+<div class="container">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div class="form-card">
+        <h2>سجل دخولك للمتجر</h2>
+        <form action="/" method="POST" id="regForm">
+            <input type="text" name="name" id="name" placeholder="الاسم الكامل" required>
+            <input type="email" name="email" id="email" placeholder="البريد الإلكتروني" required>
+            <button type="submit" class="btn">دخول للمتجر</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('regForm').onsubmit = function(e) {
+        let name = document.getElementById('name').value;
+        if(name.length < 2) {
+            alert("الرجاء كتابة الاسم بشكل صحيح");
+            e.preventDefault();
+        }
+    };
+</script>

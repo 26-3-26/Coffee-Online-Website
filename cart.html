@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>سلة المشتريات | متجر المحاصيل</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <a href="/">الرئيسية</a>
+            <a href="/products">المحاصيل</a>
+            <a href="/about">عن المتجر</a>
+        </div>
+        <div class="nav-left">
+            <a href="/" class="logout-link">تسجيل خروج</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 30px;">سلة المشتريات 🛒</h2>
+        
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+            <ul style="list-style-type: none; padding: 0;">
+                {% for item in cart_items %}
+                <li style="border-bottom: 1px solid #ddd; padding: 10px 0; display: flex; justify-content: space-between;">
+                    <span>{{ item.name }} (الكمية: {{ item.qty }})</span>
+                    <strong>{{ item.price }} ريال</strong>
+                </li>
+                {% else %}
+                <li style="text-align: center; padding: 20px; color: #777;">
+                    السلة فارغة حالياً، تفضل بزيارة صفحة المحاصيل!
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <div style="margin-top: 20px; text-align: left; font-size: 1.2em;">
+                <span>الإجمالي: </span>
+                <strong>{{ total }} ريال</strong>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="/checkout" class="btn">إتمام الطلب</a>
+                <a href="/products" class="btn btn-secondary">متابعة التسوق</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
